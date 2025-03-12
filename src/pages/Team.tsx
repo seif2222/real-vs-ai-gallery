@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -6,40 +5,28 @@ import TeamMember from "@/components/TeamMember";
 
 const team = [
   {
-    name: "Alex Johnson",
-    role: "Lead AI Researcher",
-    bio: "Specializes in computer vision and deep learning with 8+ years of experience in image analysis.",
+    name: "سيف محمد أبوزيد خلف الله",
+    role: "Team Member",
+    bio: "ID: 4231474",
     imageUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
   },
   {
-    name: "Sarah Chen",
-    role: "Backend Developer",
-    bio: "Expert in Python and machine learning infrastructure with a background in computer science.",
-    imageUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"
-  },
-  {
-    name: "Marcus Williams",
-    role: "Frontend Developer",
-    bio: "Creates intuitive and responsive user interfaces with expertise in modern web technologies.",
+    name: "يوسف عمرو محمد",
+    role: "Team Member",
+    bio: "ID: 4231263",
     imageUrl: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
   },
   {
-    name: "Elena Rodriguez",
-    role: "Data Scientist",
-    bio: "Develops and optimizes the machine learning models that power our AI detection algorithms.",
-    imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1361&q=80"
-  },
-  {
-    name: "David Kim",
-    role: "UX Designer",
-    bio: "Creates seamless user experiences with a focus on accessibility and intuitive interactions.",
+    name: "عبدالرحمن وائل الجمل",
+    role: "Team Member",
+    bio: "ID: 4231032",
     imageUrl: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80"
   },
   {
-    name: "Olivia Taylor",
-    role: "Project Manager",
-    bio: "Ensures the team delivers high-quality solutions on time with effective coordination.",
-    imageUrl: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+    name: "بدير أحمد الحناوي",
+    role: "Team Member",
+    bio: "ID: 4231607",
+    imageUrl: "https://images.unsplash.com/photo-1555952517-2e8e729e0b44?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80"
   }
 ];
 
