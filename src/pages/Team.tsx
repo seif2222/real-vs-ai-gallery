@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamMember from "@/components/TeamMember";
@@ -31,11 +33,28 @@ const team = [
 ];
 
 export default function Team() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top
+      });
+    }
+  };
+
   return (
     <>
       <Navbar />
       <main className="min-h-screen pt-24">
-        <div className="section-container">
+        <div 
+          className="section-container" 
+          ref={containerRef}
+          onMouseMove={handleMouseMove}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,9 +65,26 @@ export default function Team() {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Meet the talented individuals behind our AI detection technology.
             </p>
+            
+            <motion.div
+              className="w-24 h-24 rounded-full bg-accent/20 absolute"
+              animate={{
+                x: mousePosition.x - 48,
+                y: mousePosition.y - 48,
+                scale: 1.5,
+                opacity: 0.3
+              }}
+              transition={{ type: "spring", damping: 10, stiffness: 100 }}
+              style={{ mixBlendMode: "plus-lighter" }}
+            />
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
+          >
             {team.map((member, index) => (
               <TeamMember
                 key={member.name}
@@ -59,7 +95,7 @@ export default function Team() {
                 index={index}
               />
             ))}
-          </div>
+          </motion.div>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,9 +110,14 @@ export default function Team() {
               AI technology and its ethical applications. If you're interested in 
               joining our team, check out our current openings.
             </p>
-            <a href="#" className="button-primary">
+            <motion.a 
+              href="#" 
+              className="button-primary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               View Open Positions
-            </a>
+            </motion.a>
           </motion.div>
         </div>
       </main>
